@@ -1,0 +1,60 @@
+{% extends 'DailyReg.html'%}
+
+{% block content %}
+
+<!--自定义提取第N位item的模板过滤器-->
+{% load Nextract %}
+
+    <!--滑动导航栏-->
+<nav>
+    <div class="nav nav-tabs" id="nav-tab" role="tablist">
+        <a class="nav-item nav-link " id="nav-home-tab"  href="{% url 'mysite:dailyreg' %}" role="tab" aria-controls="nav-home" aria-selected="true">BACK</a>
+
+            <a class="nav-item nav-link active" id="nav-profile-tab" data-toggle="tab" href=" url ''" role="tab" aria-controls="nav-profile" aria-selected="false">
+                <input type ="submit" style="border:0;outline:none;background-color:transparent;" value="{{ daytime_regs.0|last }}">
+            </a>
+    </div>
+</nav>
+
+    <!--表格-->
+    <table class="table table-hover">
+        <thead class="" style="background: linear-gradient(to right,#c2e59c, #64b3f4);">
+            <tr>
+                <th scope="col">基地</th>
+                <th scope="col">部门</th>
+                <th scope="col">科室</th>
+                <th scope="col">股</th>
+                <th scope="col">岗位名称</th>
+                <th scope="col">岗级</th>
+                <th scope="col">工号</th>
+                <th scope="col">姓名</th>
+                <th scope="col">时间</th>
+                <th scope="col">接触说明</th>
+            </tr>
+        </thead>
+
+    <!--常规方法.字段方法显示不了,因为从views返回来的是%s的列表,需要用DTL过滤器才能看,调用了看任何字段的自定义过滤器-->
+        {% for reg in daytime_regs %}
+            <tbody>
+                <tr>
+                    <td >{{ reg|Nextract:1  }}</td>
+                    <td>{{ reg|Nextract:2  }}</td>
+                    <td>{{ reg|Nextract:3 }}</td>
+                    <td>{{ reg|Nextract:4}}</td>
+                    <td>{{ reg|Nextract:5 }}</td>
+                    <td>{{ reg|Nextract:6 }}</td>
+                    <td>{{ reg|Nextract:7 }}</td>
+                    <td>{{ reg|Nextract:8 }}</td>
+                    <td>{{ daytime_regs.0|last }}</td>
+                    <!--<td>{{ reg.daytime|date:"m-d" }}</td>-->
+                    {% autoescape off %}<!--关闭自动转义-->
+                    <td>{{ reg|Nextract:9 }}</td>
+                    {% endautoescape %}
+
+                </tr>
+            </tbody>
+        {% endfor %}
+    </table>
+
+
+{% endblock %}
