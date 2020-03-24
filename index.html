@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../static/CSS/base_additional.css"/>
+    <link rel="SHORT ICON" href="../static/image/favicon.ico">
+    <title>SGM-DE 尺寸工程！</title>
+  </head>
+
+
+<body>
+<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="{% url 'mysite:index' %}">DE</a>        <!--设置点击DE图标回到主页，href中返回home url-->
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav mr-auto">
+
+            <li class="nav-item" style="margin:0 10px;">
+                <a class="nav-link" href="{% url 'mysite:home' %}">Staff</a>
+            </li>
+
+            <li class="nav-item dropdown" style="margin:0 10px;">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Project
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Gloabl Project</a>
+                    <a class="dropdown-item" href="#">Local Project</a>
+                    <div class="dropdown-divider"></div>    <!--分割线-->
+                    <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+            </li>
+
+            <li class="nav-item dropdown" style="margin:0 10px;">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Issue
+                </a>
+
+                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="{% url 'mysite:onepage'%}">OnePage</a>
+                    <a class="dropdown-item" href="{% url 'mysite:LessonsLearn'%}">L&L</a>
+                    <div class="dropdown-divider"></div>    <!--分割线-->
+                    <a class="dropdown-item" href="#">Other</a>
+                </div>
+            </li>
+
+            <li class="nav-item" style="margin:0 10px;">
+                <a class="nav-link" href="#">Reference</a>
+            </li>
+
+            <li class="nav-item" style="margin:0 10px;">
+                <a class="nav-link" href="http://127.0.0.1:8000/admin/">后台管理</a>
+            </li>
+        </ul>
+            <!--搜索功能-->
+        <div style="color:white;color:#6c757d;">
+            <a href="{% url 'mysite:staff' %}" style="text-decoration: none;">WZH</a>
+        </div>
+    </div>
+</nav>
+
+<br>
+
+<!--bootstrap-album 导航栏-->
+<!--<header>-->
+    <!--<div class="bg-dark collapse" id="navbarHeader" style="">-->
+        <!--<div class="container">-->
+            <!--<div class="row">-->
+                <!--<div class="col-sm-8 col-md-7 py-4">-->
+                    <!--<h4 class="text-white">About</h4>-->
+                    <!--<p class="text-muted">Add some information about the album below, the author, or any other background context. Make it a few sentences long so folks can pick up some informative tidbits. Then, link them off to some social networking sites or contact information.</p>-->
+                <!--</div>-->
+                <!--<div class="col-sm-4 offset-md-1 py-4">-->
+                    <!--<h4 class="text-white">Contact</h4>-->
+                    <!--<ul class="list-unstyled">-->
+                        <!--<li><a href="#" class="text-white">Follow on Twitter</a></li>-->
+                        <!--<li><a href="#" class="text-white">Like on Facebook</a></li>-->
+                        <!--<li><a href="#" class="text-white">Email me</a></li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+
+    <!--<div class="navbar navbar-dark bg-dark shadow-sm">-->
+        <!--<div class="container d-flex justify-content-between">-->
+            <!--<a href="#" class="navbar-brand d-flex align-items-center">-->
+                <!--<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" aria-hidden="true" class="mr-2" viewBox="0 0 24 24" focusable="false"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>-->
+                <!--<strong>Album</strong>-->
+            <!--</a>-->
+            <!--<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">-->
+                <!--<span class="navbar-toggler-icon"></span>-->
+            <!--</button>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</header>-->
+<br>
+
+<main role="main">
+
+    <!--<section class="jumbotron text-center" style="background:linear-gradient(#FF0000 ,#FFFF33,#00BBFF);">-->
+    <section class="jumbotron text-center" style="background:linear-gradient(to right,#11998e ,#6DD5FA,#38ef7d);">
+        <div class="container" style="">
+            <h1 style="color:#FFF">S A I C - G M </h1>
+            <p class="lead text-muted">  </p>
+            <p class="lead " style="color:#333;"> 以创新的汽车产品和服务，引领智慧出行，成就美好生活 </p>
+            <p></p>
+            <p>
+                <a href="#" class="btn btn-primary my-2">L O G &nbsp&nbsp&nbsp I N</a>
+                <a href="#" class="btn btn-secondary my-2">S I G N &nbsp&nbsp U P</a>
+            </p>
+        </div>
+    </section>
+
+    <!--任务块-->
+    <div class="album py-1 bg-light">
+        <div class="container" >
+            <div class="row">
+            <div class="col-md-4" ">
+                <div class="card mb-4 shadow-sm" >
+                    <a href="{% url 'mysite:dailyreg' %}" style="text-decoration:none;">
+                        <img src="../static/image/SGM.jpg" alt="..." class="img-thumbnail img-fluid" style="width:400px;height:228px;">
+                        <!--<svg class="bd-placeholder-img card-img-top" width="100%" height="225" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">图片1</text></svg>-->
+                    </a>
+                <div class="card-body">
+                        <p class="card-text">人员管理系统 <br><br><br></p>
+
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+
+                                <a href="{% url 'mysite:dailyreg' %}" style="text-decoration:none;">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                </a>
+
+                                <a href="">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                                </a>
+                            </div>
+                            <small class="text-muted">Manager ONLY</small>
+                        </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm" >
+                    <img src="../static/image/Cadi_Logo.jpg" alt="..." class="img-thumbnail img-fluid" style="width:400px;height:228px;">
+                    <!--<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+                    <div class="card-body">
+                        <p class="card-text">项目管理系统 <br><br><br></p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                            </div>
+                            <small class="text-muted">Manager ONLY</small>
+                        </div>
+                    </div>
+              </div>
+            </div>
+            <div class="col-md-4" >
+                <div class="card mb-4 shadow-sm"  >
+                    <img src="../static/image/Buick_Logo.jpg" alt="..." class="img-thumbnail img-fluid" style="width:400px;height:228px;">
+                    <!--<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+                    <div class="card-body" >
+                        <p class="card-text">Relocation & PayCheck <br><br><br></p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                            </div>
+                            <small class="text-muted">ALL Members</small>
+                        </div>
+                    </div>
+              </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <img src="../static/image/Chev_Logo.jpg" alt="..." class="img-thumbnail img-fluid" style="width:400px;height:228px;">
+
+                    <!--<svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>-->
+                    <div class="card-body">
+                        <p class="card-text">培训 - 宣传 <br><br><br></p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                            </div>
+                            <small class="text-muted">ALL Members</small>
+                        </div>
+                    </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                    <div class="card-body">
+                        <p class="card-text">比武竞赛 <br><br><br></p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                            </div>
+                            <small class="text-muted">ALL Members</small>
+                        </div>
+                    </div>
+              </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4 shadow-sm">
+                    <svg class="bd-placeholder-img card-img-top" width="100%" height="225" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice" focusable="false" role="img" aria-label="Placeholder: Thumbnail"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em">Thumbnail</text></svg>
+                    <div class="card-body">
+                        <p class="card-text">Python 讲武堂 <br><br><br></p>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <div class="btn-group">
+                                <button type="button" class="btn btn-sm btn-outline-secondary">View</button>
+                                <button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>
+                            </div>
+                            <small class="text-muted">ALL Members</small>
+                        </div>
+                    </div>
+              </div>
+            </div>
+        </div>
+    </div>
+
+</main>
+
+<footer class="text-muted">
+
+    <br>
+    <div class="container">
+        <p class="float-right">
+            <a href="#">Back to top</a>
+        </p>
+        <p> Welcome to Manufacturing Engineering - Dimension Engineering. </p>
+        <p>Any Question? Please Contact Us by <a href="https://v4.bootcss.com/">Phone</a> or  <a href="/docs/getting-started/introduction/">Email</a>.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script>window.jQuery || document.write('<script src="/docs/assets/js/vendor/jquery.slim.min.js"><\/script>')</script><script src="/docs/dist/js/bootstrap.bundle.min.js" integrity="sha384-6khuMg9gaYr5AxOqhkVIODVIvm9ynTT5J4V1cfthmT+emCG6yVmEZsRHdxlotUnm" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

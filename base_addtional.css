@@ -1,0 +1,21 @@
+/*注意权重要和base文件中比较*/
+
+.clearfix:after{
+content:"";
+display:block;
+clear:both;
+}
+
+
+.fl{
+float:left;
+}
+.fr{
+float:right;
+}
+
+<!--为确保内容不被header遮挡,且脚注固定在底部,将container设置固定高度,上边距的固定盒子,不过好像没起作用-->
+.fixbox{
+height:470px;
+margin:60px auto;
+}

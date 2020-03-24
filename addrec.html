@@ -1,0 +1,161 @@
+{% extends 'base.html'%}
+
+{% block content %}
+<br>
+<br>
+
+<!--BT排版 题头信息-->
+    <p class="lead text-center">
+        DE科室人员接触记录填写表
+    </p>
+
+<!--BT-表单组件-->
+<div style="margin-left:5px;">
+    <form method="post" action="">
+        {% csrf_token %}
+    <!--首行信息,应用了响应式框架,共分为12分,col-dm-4,表格横向4成,mb3,纵向间距3成-->
+        <div class="form-row">
+            <!--基地信息-->
+            <div class="col-md-4 mb-3">
+                <label for="validationServer03">所在基地</label>
+                <input type="text" name="basement" class="form-control is-invalid" id="validationServer03" required>
+                <div class="invalid-feedback">
+                    例如: JQNP
+                </div>
+            </div>
+            <!--部门信息-->
+            <div class="col-md-4 mb-3">
+                <label for="validationServer03">部门</label>
+                <input type="text" name="department" class="form-control is-invalid" id="validationServer03" required>
+                <div class="invalid-feedback">
+                    例如: VME
+                </div>
+            </div>
+            <!--科室信息-->
+            <div class="col-md-4 mb-3">
+                <label for="validationServer03">科室</label>
+                <input type="text"  name="office" class="form-control is-invalid" id="validationServer03" required>
+                <div class="invalid-feedback">
+                    例如: DE
+                </div>
+            </div>
+        </div>
+
+        <!--第二行信息-->
+        <div class="form-row">
+            <!--职位-->
+            <div class="col-md-4 mb-3">
+                <label for="validationServer03">职位</label>
+                <input type="text"  name="position" class="form-control is-invalid" id="validationServer03" required>
+                <div class="invalid-feedback">
+                    例如: 尺寸认证工程师
+                </div>
+            </div>
+            <!--岗级-->
+            <div class="col-md-4 mb-3">
+                <label for="validationServer04">岗级</label>
+                <select class="custom-select is-invalid" name="level" id="validationServer04" required>
+                    <option selected disabled value="">请选择...</option>
+                    <option>E</option>
+                    <option>G</option>
+                    <option>H</option>
+                    <option>I</option>
+                    <option>Z</option>
+                </select>
+                <div class="invalid-feedback">
+                    请大胆选择你的岗级!
+                </div>
+            </div>
+            <!--股-->
+            <div class="col-md-4 mb-3">
+                <label for="validationServer04">股</label>
+                <select class="custom-select is-invalid" name="gro" id="validationServer04" required>
+                    <option selected disabled value="">请选择...</option>
+                    <option>DV</option>
+                    <option>ES</option>
+                    <option>DS</option>
+                </select>
+                <div class="invalid-feedback">
+                    请选择所属股
+                </div>
+            </div>
+        </div>
+
+        <!--第三行信息-->
+        <div class="form-row">
+            <!--工号-->
+            <div class="col-md-4 mb-3">
+                <label for="validationServer03">工号</label>
+                <input type="text"  name="userid" class="form-control is-invalid" id="validationServer03" required>
+                <div class="invalid-feedback">
+                    请输入工号
+                </div>
+            </div>
+            <!--姓名-->
+            <div class="col-md-4 mb-3">
+                <label for="validationServer03">姓名</label>
+                <input type="text"  name="username" class="form-control is-invalid" id="validationServer03" required>
+                <div class="invalid-feedback">
+                    请输入姓名
+                </div>
+            </div>
+            <!--日期-->
+            <div class="col-md-4 mb-2">
+                <label for="validationServer05">日期</label>
+                <input type="text" name="daytime"  class="form-control is-invalid" id="validationServer05" required>
+                <div class="invalid-feedback">
+                    请选择提交日期
+                </div>
+            </div>
+        </div>
+
+        <!--健康信息-->
+        <!--<fieldset class="form-group">-->
+            <!--<div class="row">-->
+                <!--<legend class="col-form-label col-sm-1 pt-0 ">今日状态</legend>-->
+                <!--<div>-->
+                    <!--<div class="col-sm-12">-->
+                        <!--<div class="custom-control custom-switch">-->
+                        <!--<input type="checkbox" class="custom-control-input" id="customSwitch1">-->
+                        <!--<label class="custom-control-label" for="customSwitch1">健康, 身体无不适</label>-->
+                        <!--</div>-->
+                    <!--</div>-->
+
+                    <!--<div class="col-sm-12">-->
+                        <!--<div class="custom-control custom-switch">-->
+                        <!--<input type="checkbox" class="custom-control-input" id="customSwitch2">-->
+                        <!--<label class="custom-control-label" for="customSwitch2">感觉不太好, 身体不适</label>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</fieldset>-->
+
+        <!--接触记录-->
+        <div class="mb-3">
+            <label for="validationTextarea">今日接触记录</label>
+            <textarea class="form-control is-invalid"  name="contactdetail" id="validationTextarea" placeholder="休假" required></textarea>
+                <div class="invalid-feedback">
+                    请在文本框内输入今日人员接触信息
+                </div>
+        </div>
+
+        <!--提交-->
+        <button class="btn btn-primary" type="submit">确认提交</button>
+</form>
+
+
+
+
+
+
+</div>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endblock %}
+
+

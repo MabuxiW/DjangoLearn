@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="zh-cn">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../static/CSS/base_additional.css"/>
+    <link rel="SHORT ICON" href="../static/image/favicon.ico">
+    <title>SGM-DE 尺寸工程！</title>
+</head>
+
+<body style="height:1000px;">
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="{% url 'mysite:index' %}">DE</a>        <!--设置点击DE图标回到主页，href中返回home url-->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+
+                <li class="nav-item" style="margin:0 10px;">
+                    <a class="nav-link" href="{% url 'mysite:addrec' %}">Add Item</a>
+                </li>
+                <!--<li class="nav-item" style="margin:0 10px;">-->
+                    <!--<a class="nav-link" href="http://127.0.0.1:8000/admin/mysite/dailyreg/">修改记录</a>-->
+                <!--</li>-->
+        </div>
+
+    </nav>
+
+
+
+<!--表格显示-->
+    <br>
+    <br>
+    <br>
+
+    <div>
+        <p class="lead text-center">
+            祝您身体健康 事业顺利 家庭美满 人生得意 !
+        </p>
+    </div>
+
+    <!--其他模板的接口-->
+<div style=" height:470px;">
+    {% block content %}
+
+            <!--滑动导航栏-->
+        <nav>
+            <div class="nav nav-tabs " id="nav-tab" role="tablist">
+                <a class="nav-item nav-link active" id="nav-home-tab" href="{% url 'mysite:booktest'%}" role="tab" aria-controls="nav-home" aria-selected="true" style="color:#007BFF;">All</a>
+
+                {% for distinctime in distinctimes.distinct_daytimes %}
+
+                    <a class="nav-item nav-link" id="nav-profile-tab"  href="{% url 'mysite:specialreg' datetime_tag=distinctime.0 %}" role="tab" aria-controls="nav-profile" aria-selected="false">
+                        <input type ="submit" style="border:0;outline:none;background-color:transparent;" value="{{ distinctime.0 }}">
+                    </a>
+                <!--</a>-->
+                {% endfor %}
+            </div>
+        </nav>
+
+            <!--表格-->
+            <table class="table table-hover">
+            <thead class="" style="background: linear-gradient(to right,#c2e59c, #64b3f4);">
+                <tr>
+                    <th scope="col">基地</th>
+                    <th scope="col">部门</th>
+                    <th scope="col">科室</th>
+                    <th scope="col">股</th>
+                    <th scope="col">岗位名称</th>
+                    <th scope="col">岗级</th>
+                    <th scope="col">工号</th>
+                    <th scope="col">姓名</th>
+                    <th scope="col">时间</th>
+                    <th scope="col">接触说明</th>
+                </tr>
+            </thead>
+        {% for reg in status.dailystatus %}
+            <tbody>
+                <tr>
+                    <td >{{ reg.basement }}</td>
+                    <td>{{ reg.department }}</td>
+                    <td>{{ reg.office }}</td>
+                    <td>{{ reg.gro }}</td>
+                    <td>{{ reg.position }}</td>
+                    <td>{{ reg.level }}</td>
+                    <td>{{ reg.userid }}</td>
+                    <td>{{ reg.username }}</td>
+                    <td>{{ reg.daytime}}</td>
+                    <!--<td>{{ reg.daytime|date:"m-d" }}</td>-->
+                    {% autoescape off %}
+                    <td>{{ reg.contactdetail }}</td>
+                    {% endautoescape %}
+
+                </tr>
+            </tbody>
+        {% endfor %}
+        </table>
+
+        {% endblock %}
+    <br>
+
+        <!--分页栏-->
+        <nav aria-label="Page navigation example " >
+            <ul class="pagination justify-content-center">
+            <li class="page-item disabled">
+                <a class="page-link" href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+            <a class="page-link" href="#" aria-label="Next">
+            <span aria-hidden="true">&raquo;</span>
+            </a>
+            </li>
+        </ul>
+        </nav>
+    </body>
+</div>
+
+<footer class="text-muted" style="">
+    <br>
+    <div class="container" style="">
+        <p class="float-right">
+            <a href="#">Back to top</a>
+        </p>
+        <p> Welcome to Manufacturing Engineering - Dimension Engineering. &nbsp  &nbsp Any Question? Please Contact Us by <a href="https://v4.bootcss.com/">Phone</a> or  <a href="/docs/getting-started/introduction/">Email</a>.</p>
+    </div>
+</footer>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+</html>
